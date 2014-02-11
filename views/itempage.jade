@@ -1,0 +1,50 @@
+extends layout
+
+block content
+	link(href='/stylesheets/item-page.css' rel='stylesheet' type='style/css')
+	.page
+		.header
+		.body
+			.sidebar
+				input(type='search',placeholder='search for an item', name='searh-field')
+				#my-hobby
+					h3 MY HOBBY
+				#hobbies
+					ul
+						li Outdoor
+						li Fasion
+						li Wine
+						li Photography
+						li Music
+				#my-closet
+					h3 MY CLOSET
+				#explore
+					h3 EXPLORE
+			.stories
+				.story
+					img(alt="Profile Picture")
+					h3 Chris Griffin wrote a story
+					p
+					a(href="#") Comment
+					a(href="#") Rate
+					a(href="#") Share
+					.box
+						img(alt="Personal Picture")
+						img(alt="Star")
+						h3 8.6/10
+						p Rated by 23 people
+						.buy-it
+							h3 Buy for $140
+				.story
+					img(alt="Profile Picture")
+					h3 Jason Troop wrote a story
+					p
+					a(href="#") Comment
+					a(href="#") Rate
+					a(href="#") Share
+					.box
+						img(alt="Personal Picture")
+						img(alt="Star")
+						h3 7.6/10
+						p Rated by 12 people
+						input(type="button" name="buy-it" value="Rent for $40/day")

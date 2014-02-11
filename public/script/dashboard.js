@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+$(document).ready(function() {
+							
+=======
 function getItems(query, cb) {
 }
 
@@ -14,4 +18,5 @@ $(document).ready(function() {
 		console.log(data);
 		loadDirect(data);
 	});
+>>>>>>> 574d51c508e3df5aa4a964bdf85a5e4e4b8d7e5e
 });
