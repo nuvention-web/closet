@@ -6,51 +6,50 @@ block content
 	
 	=console.log(user)
 	
-	.profile-container
-		.banner
-			img(src='../../images/coverpic.png').cover-photo
-			img(src=user.profilePicture).profile-picture
-			h3=user.realName.firstName + ' ' + user.realName.lastName
-		.main
-			.main__info
-				h4 Lives in 
-					a(href=)=user.location
-				h4 Likes 
-					a(href=)=user.hobbies
-			.main__recent-activity
-				//render some activityTile s
-					not part of original mockup though, so commented out
-				//each activity in recent
-					.activity-tile
-						.activity-tile__user=activity.user
-						.activity-tile__message=activity.message
-			.main__my-collections
-				//render some dashItem s
-				//render dashItem with collection passed as items param
-				each item in user.myCollection
-					=console.log(item)
-					.item
-						.item__main
-							i.item__mark-button
-							img.item__prod-img(src='../../images/'+item.photos[0])
-							a(href='/items/'+item._id)
-								p.item__name=item.name
-			.main__my-favorites
-				//render some more dashItem s
-				//rather, render dashItem with favorites list passed as items param	
-				each item in user.favorites
-					=console.log(item)
-					.item
-						.item__main
-							i.item__mark-button
-							img.item__prod-img(src='../../images/'+item.photos[0])
-							a(href='/items/'+item._id)
-								p.item__name=item.name
-			.main__my-friends
-				//render some profile pictures and usernames
-				each friend in user.friends
-					=console.log(friend)
-					.friend
-						img(src=friend.profilePicture).friend__profile-picture
-						//if user hasn't specified a first name, use their login username
-						a(href=friend.profileURL).friend__user-name=friend.username
+	.main
+		img(src='../../images/coverpic.png').cover-photo
+		img(src=user.profilePicture).profile-picture
+		h3=user.realName.firstName + ' ' + user.realName.lastName
+
+		.main__info
+			h4 Lives in 
+				a(href=)=user.location
+			h4 Likes 
+				a(href=)=user.hobbies
+		.main__recent-activity
+			//render some activityTile s
+				not part of original mockup though, so commented out
+			//each activity in recent
+				.activity-tile
+					.activity-tile__user=activity.user
+					.activity-tile__message=activity.message
+		.main__my-collections
+			//render some dashItem s
+			//render dashItem with collection passed as items param
+			each item in user.myCollection
+				=console.log(item)
+				.item
+					.item__main
+						i.item__mark-button
+						img.item__prod-img(src='../../images/'+item.photos[0])
+						a(href='/items/'+item._id)
+							p.item__name=item.name
+		.main__my-favorites
+			//render some more dashItem s
+			//rather, render dashItem with favorites list passed as items param	
+			each item in user.favorites
+				=console.log(item)
+				.item
+					.item__main
+						i.item__mark-button
+						img.item__prod-img(src='../../images/'+item.photos[0])
+						a(href='/items/'+item._id)
+							p.item__name=item.name
+		.main__my-friends
+			//render some profile pictures and usernames
+			each friend in user.friends
+				=console.log(friend)
+				.friend
+					img(src=friend.profilePicture).friend__profile-picture
+					//if user hasn't specified a first name, use their login username
+					a(href=friend.profileURL).friend__user-name=friend.username

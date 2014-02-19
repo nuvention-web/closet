@@ -53,6 +53,11 @@ body
 			border-style: solid
 			border-width: 4px
 			border-color: #fff
+
+		span.profileLink 
+			font-size: 0.75em
+			text-decoration: none
+			color: #CC3300
 	
 		span.centeredLogo
 			font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif
@@ -63,17 +68,22 @@ body
 			width: auto
 			position: relative
 			top: -15px
-			left: 40%
+			left: 35%
+	
+		input[type="search"]
+			display: inline-block
+			float: right
+		
+		button.searchButton
+			display: inline-block
+			float: right
+			margin-left: 10px
+			margin-right: 10px
 		
 	nav
 		@include span-columns(3)
 		@include pad(0.5, 0.5)
 		max-width: 200px
-
-		input[type="search"] 
-			font-size: 14px
-			width: 95%
-			margin: 0 2% 15px 2%
 
 		h3 
 			font-size: 14pt
@@ -119,6 +129,7 @@ body
 		padding-top: 15px
 		background: white
 		@include box-shadow(-1px -1px 1px rgba(0,0,0,0.1))
+		position: relative
 
 	//RESPONSIVENESS BELOW
 	
@@ -127,4 +138,7 @@ body
 	
 	@include at-breakpoint($mobile-break)
 		//mobile styles
+
+	
+
 	
