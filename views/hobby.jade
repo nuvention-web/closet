@@ -13,51 +13,148 @@ block content
 	//- all the content for the hobby page
 	.main
 		.title
-			img(src='../../images/coverpic.png').cover-photo
+			img(src='../../images/hobbypic.png').banner-photo
 			h3.hobbyTitle Outdoor
 		#tabs
 			ul
 				li.tab
 					a(href='#whatsNew') What's New
 				li.tab
-					a(href='#marketplace') Marketplace
+					a(href='#Marketplace') Marketplace
 			#whatsNew
 				#posts
 					.newItemPost
 						img(src='../../images/ChrisGriffin.png').feed-profile-picture
-						h4.name Chris Griffin
+						h4.name
+							a(href='#') Chris Griffin
 						p posted an items
 						.newItem
 							img(src='../../images/newtent.png')
 							h3.rating 9.6/10
 							p rated by 23 people
-							h4.buy Buy for $140
+							h4.buy
+								a(href='#') Buy for $140
 					.userPost
 						img(src='../../images/JasonTroop.png').feed-profile-picture
-						h4.name Jason Troop
+						h4.name
+							a(href='#') Jason Troop
 						.postContent
 							p Yosemite has amazing weather now. Highly recommended climbing half dome to watch sunrise! Make sure to layer up--it’s still chilly at night.
-							h5.comments Comments (3) Share
+							h5.comments 
+								a(href='#') Comments (3)
+								a(href='#')  Share
 							img(src='../../images/usertent.png')
 				#hobbyists
-					h4 Hobbyists (149)
-					img(src='../../images/hobbyist01.png')
-					img(src='../../images/hobbyist02.png')
-					img(src='../../images/hobbyist03.png')
-					img(src='../../images/hobbyist04.png')
-					img(src='../../images/hobbyist05.png')
-					img(src='../../images/hobbyist06.png')
-					img(src='../../images/hobbyist07.png')
-					img(src='../../images/hobbyist08.png')
-					img(src='../../images/hobbyist09.png')
-					img(src='../../images/hobbyist10.png')
-					img(src='../../images/hobbyist11.png')
-					img(src='../../images/hobbyist12.png')
-					img(src='../../images/hobbyist13.png')
-					img(src='../../images/hobbyist14.png')
-					img(src='../../images/hobbyist15.png')
-					img(src='../../images/hobbyist16.png')
+					h4 Hobbyists 
+							a(href='#') (149)
+					a(href='#') 
+						img(src='../../images/hobbyist01.png')
+					a(href='#') 
+						img(src='../../images/hobbyist02.png')
+					a(href='#') 
+						img(src='../../images/hobbyist03.png')
+					a(href='#') 
+						img(src='../../images/hobbyist04.png')
+					a(href='#') 
+						img(src='../../images/hobbyist05.png')
+					a(href='#') 
+						img(src='../../images/hobbyist06.png')
+					a(href='#') 
+						img(src='../../images/hobbyist07.png')
+					a(href='#') 
+						img(src='../../images/hobbyist08.png')
+					a(href='#') 
+						img(src='../../images/hobbyist09.png')
+					a(href='#') 
+						img(src='../../images/hobbyist10.png')
+					a(href='#') 
+						img(src='../../images/hobbyist11.png')
+					a(href='#') 
+						img(src='../../images/hobbyist12.png')
+					a(href='#') 
+						img(src='../../images/hobbyist13.png')
+					a(href='#') 
+						img(src='../../images/hobbyist14.png')
+					a(href='#') 
+						img(src='../../images/hobbyist15.png')
+					a(href='#') 
+						img(src='../../images/hobbyist16.png')
 			#Marketplace
+				#category
+					h3 category
+					input(type='search', placeholder='Search items by category tags', name='searchField')
+				#type
+					h3 type
+					button.typeButton buy
+					button.typeButton rent
+				#items
+					.forSale
+						img(src='../../images/yellowtent.png').productImage
+						img(src='../../images/hobbyist01.png').feed-profile-picture
+						.info
+							h4 
+								a(href='#') Northface Backcountry Tent
+							p Like New
+						.buy
+							h4 $240
+							p
+								a(href='#') buy
+					.forRent
+						img(src='../../images/sleepingbag.png').productImage
+						img(src='../../images/hobbyist02.png').feed-profile-picture
+						.info
+							h4
+								a(href='#') Columbia Sleeping Bag
+							p Mint Condition
+						.rent
+							h4 $35/day
+							p 
+								a(href='#') rent
+					.forSale
+						img(src='../../images/harness.png').productImage
+						img(src='../../images/hobbyist03.png').feed-profile-picture
+						.info
+							h4
+								a(href='#') Misty Rock Climbing Set
+							p Almost New
+						.buy
+							h4 $35
+							p
+								a(href='#') buy
+					.forRent
+						img(src='../../images/snowboard.png').productImage
+						img(src='../../images/hobbyist04.png').feed-profile-picture
+						.info
+							h4
+								a(href='#') Burton Parkstar Snowboard
+							p Used
+						.rent
+							h4 $15/day
+							p
+								a(href='#') rent
+					.forSale
+						img(src='../../images/camera.png').productImage
+						img(src='../../images/hobbyist05.png').feed-profile-picture
+						.info
+							h4
+								a(href='#') IDK What
+							p Like New
+						.buy 
+							h4 $100
+							p
+								a(href='#') buy
+					.forSale
+						img(src='../../images/surfboard.png').productImage
+						img(src='../../images/hobbyist06.png').feed-profile-picture
+						.info
+							h4 
+								a(href='#') Infinity Surfboard
+							p Lightly Used
+						.buy
+							h4 $150
+							p
+								a(href='#') buy
+
 		//- //this loads all the items related to the hobbie, which are passed to the template as "items"
 		//- mixin dashItems(items)
 
