@@ -409,17 +409,19 @@
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 0 10px;
+  font-size: 20pt;
 }
-/* line 26, ../../sass/itempage.sass */
+/* line 27, ../../sass/itempage.sass */
 .main .left .headerInfo p.condition {
   text-align: left;
   position: relative;
   display: inline-block;
   margin: 4px 10px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #cccccc;
+  color: #bbbbbb;
+  font-size: 12pt;
 }
-/* line 34, ../../sass/itempage.sass */
+/* line 36, ../../sass/itempage.sass */
 .main .left .headerInfo p.location {
   text-align: left;
   position: relative;
@@ -427,39 +429,42 @@
   margin: 4px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #333333;
+  font-size: 12pt;
 }
-/* line 42, ../../sass/itempage.sass */
+/* line 45, ../../sass/itempage.sass */
 .main .left .ratingInfo {
   width: 30%;
   position: relative;
   display: inline-block;
   margin-bottom: 10px;
 }
-/* line 48, ../../sass/itempage.sass */
+/* line 51, ../../sass/itempage.sass */
 .main .left .ratingInfo h4 {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 5px 0;
   text-align: right;
+  font-size: 18pt;
 }
-/* line 53, ../../sass/itempage.sass */
+/* line 58, ../../sass/itempage.sass */
 .main .left .ratingInfo p {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin: 5px 0;
   text-align: right;
-  color: #cccccc;
+  color: #bbbbbb;
+  font-size: 12pt;
 }
-/* line 60, ../../sass/itempage.sass */
+/* line 66, ../../sass/itempage.sass */
 .main .left img.productImage {
   width: 100%;
   margin-bottom: 20px;
 }
-/* line 66, ../../sass/itempage.sass */
+/* line 72, ../../sass/itempage.sass */
 .main .left #description .productDes, .main .left #description .productCond {
   padding: 0 20px;
 }
-/* line 69, ../../sass/itempage.sass */
+/* line 75, ../../sass/itempage.sass */
 .main .left #description .productDes p.cat, .main .left #description .productCond p.cat {
   position: relative;
   display: inline-block;
@@ -471,7 +476,7 @@
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #33ccff;
 }
-/* line 80, ../../sass/itempage.sass */
+/* line 86, ../../sass/itempage.sass */
 .main .left #description .productDes p.des, .main .left #description .productCond p.des {
   position: relative;
   display: inline-block;
@@ -483,21 +488,23 @@
   color: #333333;
   margin: 20px 0;
 }
-/* line 91, ../../sass/itempage.sass */
+/* line 97, ../../sass/itempage.sass */
 .main .right {
   width: 30%;
   position: relative;
   display: inline-block;
   float: right;
 }
-/* line 98, ../../sass/itempage.sass */
+/* line 104, ../../sass/itempage.sass */
 .main .right .buy {
+  margin-top: 68px;
   width: 90%;
   float: center;
+  border-radius: 5px;
   background: #eeeeee;
   border: 1px solid #888888;
 }
-/* line 104, ../../sass/itempage.sass */
+/* line 112, ../../sass/itempage.sass */
 .main .right .buy h3.price {
   text-align: center;
   margin: 10px 0;
@@ -506,7 +513,7 @@
   color: #007aa3;
   font-size: 24pt;
 }
-/* line 112, ../../sass/itempage.sass */
+/* line 120, ../../sass/itempage.sass */
 .main .right .buy h5.buyButton {
   display: block;
   padding: 3% 0%;
@@ -519,9 +526,310 @@
   color: white;
   background: #33ccff;
 }
-/* line 127, ../../sass/itempage.sass */
-.main .right img.standIn {
-  margin: 10px 0;
+/* line 132, ../../sass/itempage.sass */
+.main .right .collection {
+  margin: 15px 0;
+  background: white;
   width: 90%;
-  float: middle;
+  float: center;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
+/* line 140, ../../sass/itempage.sass */
+.main .right .collection span#heart {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  left: 80%;
+}
+/* line 146, ../../sass/itempage.sass */
+.main .right .collection span#heart:before, .main .right .collection #heart:after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  height: 32px;
+  background: #cccccc;
+  border-radius: 20px 20px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+/* line 158, ../../sass/itempage.sass */
+.main .right .collection span#heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+/* line 163, ../../sass/itempage.sass */
+.main .right .collection span#heart.red {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  left: 80%;
+}
+/* line 169, ../../sass/itempage.sass */
+.main .right .collection span#heart.red:before, .main .right .collection #heart.red:after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  height: 32px;
+  background: red;
+  border-radius: 20px 20px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+/* line 181, ../../sass/itempage.sass */
+.main .right .collection span#heart.red:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+/* line 186, ../../sass/itempage.sass */
+.main .right .collection h5 {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 100%;
+  width: 72%;
+  margin: 8% 3%;
+}
+/* line 193, ../../sass/itempage.sass */
+.main .right .sellerInfo {
+  width: 90%;
+  float: center;
+}
+/* line 197, ../../sass/itempage.sass */
+.main .right img.profile-pic {
+  position: relative;
+  display: inline-block;
+  border-style: solid;
+  border-color: white;
+  border-width: 6px;
+  width: 30%;
+  height: 30%;
+  margin-bottom: 5px;
+}
+/* line 207, ../../sass/itempage.sass */
+.main .right .basic {
+  vertical-align: top;
+  width: 65%;
+  position: relative;
+  display: inline-block;
+}
+/* line 213, ../../sass/itempage.sass */
+.main .right .basic p {
+  text-align: left;
+  position: relative;
+  margin: 2px 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #bbbbbb;
+  top: 0;
+  font-size: 12pt;
+}
+/* line 222, ../../sass/itempage.sass */
+.main .right .basic h4.name {
+  text-align: left;
+  position: relative;
+  margin: 2px 4px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333333;
+  top: 0;
+}
+/* line 230, ../../sass/itempage.sass */
+.main .right span.star {
+  margin: 7.5px 0;
+  position: relative;
+  display: inline-block;
+  color: #cccccc;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid #cccccc;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+/* line 242, ../../sass/itempage.sass */
+.main .right span.star:before {
+  border-bottom: 12px solid #cccccc;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -6.75px;
+  left: -9.75px;
+  display: block;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+/* line 255, ../../sass/itempage.sass */
+.main .right span.star:after {
+  position: absolute;
+  display: block;
+  color: #cccccc;
+  top: 0.75px;
+  left: -15.75px;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid #cccccc;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  content: "";
+}
+/* line 269, ../../sass/itempage.sass */
+.main .right span.star.yellow {
+  margin: 7.5px 0;
+  position: relative;
+  display: inline-block;
+  color: yellow;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid yellow;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  -o-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+/* line 281, ../../sass/itempage.sass */
+.main .right span.star.yellow:before {
+  border-bottom: 12px solid yellow;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -6.75px;
+  left: -9.75px;
+  display: block;
+  content: "";
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+/* line 294, ../../sass/itempage.sass */
+.main .right span.star.yellow:after {
+  position: absolute;
+  display: block;
+  color: yellow;
+  top: 0.75px;
+  left: -15.75px;
+  width: 0px;
+  height: 0px;
+  border-right: 15px solid transparent;
+  border-bottom: 10.5px solid yellow;
+  border-left: 15px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+  content: "";
+}
+/* line 308, ../../sass/itempage.sass */
+.main .right span.rating {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* line 313, ../../sass/itempage.sass */
+.main .right span.rating h5 {
+  margin: 0 6px;
+  text-align: left;
+  font-size: 16pt;
+}
+/* line 318, ../../sass/itempage.sass */
+.main .right span.rating p {
+  font-size: 10pt;
+  margin: 0 6px;
+  text-align: left;
+}
+/* line 323, ../../sass/itempage.sass */
+.main .right .testimony {
+  background: white;
+  width: 90%;
+  float: center;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #888888;
+}
+/* line 331, ../../sass/itempage.sass */
+.main .right .testimony img.mini-profile-pic {
+  width: 15%;
+  height: 15%;
+  display: inline-block;
+  margin: 15px 0 0 8px;
+}
+/* line 337, ../../sass/itempage.sass */
+.main .right .testimony p.first {
+  width: 90%;
+  padding: 5px;
+  text-align: left;
+  background: #cccccc;
+  font-size: 10pt;
+  border-radius: 5px;
+}
+/* line 345, ../../sass/itempage.sass */
+.main .right .testimony p.more {
+  text-align: left;
+  font-size: 10pt;
+  padding: 0 10px;
+}
+/* line 350, ../../sass/itempage.sass */
+.main .right .stars {
+  display: inline-block;
+  position: relative;
+  margin: 0 15px;
+  top: -8px;
 }

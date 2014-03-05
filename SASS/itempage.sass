@@ -22,6 +22,7 @@
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
 				font-weight: normal
 				margin: 0 10px
+				font-size: 20pt
 
 			p.condition
 				text-align: left
@@ -29,7 +30,8 @@
 				display: inline-block
 				margin: 4px 10px
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
-				color: #ccc
+				color: #bbb
+				font-size: 12pt
 
 			p.location
 				text-align: left
@@ -38,6 +40,7 @@
 				margin: 4px
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
 				color: #333
+				font-size: 12pt
 
 		.ratingInfo
 			width: 30%
@@ -50,12 +53,15 @@
 				font-weight: normal
 				margin: 5px 0
 				text-align: right
+				font-size: 18pt
+
 			p
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
 				font-weight: normal
 				margin: 5px 0
 				text-align: right
-				color: #ccc
+				color: #bbb
+				font-size: 12pt
 
 		img.productImage
 			width: 100%
@@ -96,8 +102,10 @@
 		float: right
 
 		.buy
+			margin-top: 68px
 			width: 90%
 			float: center
+			border-radius: 5px
 			background: #eee
 			border: 1px solid #888
 
@@ -121,11 +129,226 @@
 				color: #fff
 				background: #33CCFF
 
-		// h4.name
-		// 	position: relative
-
-		img.standIn
-			margin: 10px 0
+		.collection
+			margin: 15px 0
+			background: #fff
 			width: 90%
-			float: middle
+			float: center
+			border-radius: 5px
+			border: 1px solid #888
 
+			span#heart
+				position: relative
+				width: 40px
+				height: 36px
+				left: 80%
+
+			span#heart:before, #heart:after
+				position: absolute
+				content: ""
+				left: 20px
+				top: 13px
+				width: 20px
+				height: 32px
+				background: #ccc
+				border-radius: 20px 20px 0 0
+				@include transform(rotate(-45deg))
+				@include transform-origin(0, 100%)
+			
+			span#heart:after 
+				left: 0
+				@include transform(rotate(45deg))
+				@include transform-origin(100%, 100%)
+
+			span#heart.red
+				position: relative
+				width: 40px
+				height: 36px
+				left: 80%
+
+			span#heart.red:before, #heart.red:after
+				position: absolute
+				content: ""
+				left: 20px
+				top: 13px
+				width: 20px
+				height: 32px
+				background: #ff0000
+				border-radius: 20px 20px 0 0
+				@include transform(rotate(-45deg))
+				@include transform-origin(0, 100%)
+
+			span#heart.red:after
+				left: 0
+				@include transform(rotate(45deg))
+				@include transform-origin(100%, 100%)
+
+			h5
+				text-align: right
+				vertical-align: middle
+				line-height: 100%
+				width: 72%
+				margin: 8% 3%
+
+		.sellerInfo
+			width: 90%
+			float: center
+
+		img.profile-pic
+			position: relative
+			display: inline-block
+			border-style: solid
+			border-color: #fff
+			border-width: 6px
+			width: 30%
+			height: 30%
+			margin-bottom: 5px
+
+		.basic
+			vertical-align: top
+			width: 65%
+			position: relative
+			display: inline-block
+
+			p
+				text-align: left
+				position: relative
+				margin: 2px 4px
+				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
+				color: #bbb
+				top: 0
+				font-size: 12pt
+
+			h4.name
+				text-align: left
+				position: relative
+				margin: 2px 4px
+				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
+				color: #333
+				top: 0
+
+		span.star
+			margin: 7.5px 0
+			position: relative
+			display: inline-block
+			color: #ccc
+			width: 0px
+			height: 0px
+			border-right:  15px solid transparent
+			border-bottom: 10.5px solid #ccc
+			border-left:   15px solid transparent
+			@include transform(rotate(35deg))
+
+		span.star:before
+			border-bottom: 12px solid #ccc
+			border-left: 4.5px solid transparent
+			border-right: 4.5px solid transparent
+			position: absolute
+			height: 0
+			width: 0
+			top: -6.75px
+			left: -9.75px
+			display: block
+			content: ''
+			@include transform(rotate(-35deg))
+
+		span.star:after
+			position: absolute
+			display: block
+			color: #ccc
+			top: 0.75px
+			left: -15.75px
+			width: 0px
+			height: 0px
+			border-right: 15px solid transparent
+			border-bottom: 10.5px solid #ccc
+			border-left: 15px solid transparent
+			@include transform(rotate(-70deg))
+			content: ''
+
+		span.star.yellow
+			margin: 7.5px 0
+			position: relative
+			display: inline-block
+			color: #ffff00
+			width: 0px
+			height: 0px
+			border-right:  15px solid transparent
+			border-bottom: 10.5px solid #ffff00
+			border-left:   15px solid transparent
+			@include transform(rotate(35deg))
+
+		span.star.yellow:before
+			border-bottom: 12px solid #ffff00
+			border-left: 4.5px solid transparent
+			border-right: 4.5px solid transparent
+			position: absolute
+			height: 0
+			width: 0
+			top: -6.75px
+			left: -9.75px
+			display: block
+			content: ''
+			@include transform(rotate(-35deg))
+
+		span.star.yellow:after
+			position: absolute
+			display: block
+			color: #ffff00
+			top: 0.75px
+			left: -15.75px
+			width: 0px
+			height: 0px
+			border-right: 15px solid transparent
+			border-bottom: 10.5px solid #ffff00
+			border-left: 15px solid transparent
+			@include transform(rotate(-70deg))
+			content: ''
+
+		span.rating
+			position: relative
+			display: inline-block
+			margin-bottom: 10px
+
+			h5
+				margin: 0 6px
+				text-align: left
+				font-size: 16pt
+
+			p
+				font-size: 10pt
+				margin: 0 6px
+				text-align: left
+
+		.testimony
+			background: #fff
+			width: 90%
+			float: center
+			margin: 10px 0
+			border-radius: 5px
+			border: 1px solid #888
+
+			img.mini-profile-pic
+				width: 15%
+				height: 15%
+				display: inline-block
+				margin: 15px 0 0 8px
+
+			p.first
+				width: 90%
+				padding: 5px
+				text-align: left
+				background: #ccc
+				font-size: 10pt
+				border-radius: 5px
+
+			p.more
+				text-align: left
+				font-size: 10pt
+				padding: 0 10px
+
+		.stars
+			display: inline-block
+			position: relative
+			margin: 0 15px
+			top: -8px
