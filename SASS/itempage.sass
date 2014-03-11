@@ -63,6 +63,10 @@
 
 		img.productImage
 			width: 100%
+			margin: 0
+
+		img.imageGallery
+			width: 100%
 			margin-bottom: 20px
 
 		#description
@@ -124,6 +128,10 @@
 				font-family: "Lucida Grande", Helvetica, Arial, sans-serif
 				color: #fff
 				background: #33CCFF
+
+				&:hover
+					cursor: pointer
+					background: lighten(#33CCFF, 10%)
 
 		.collection
 			margin: 15px 0
@@ -342,6 +350,10 @@
 				text-align: left
 				font-size: 10pt
 				padding: 0 10px
+
+				&:hover
+					text-decoration: underline
+					cursor: pointer
 
 		.stars
 			display: inline-block

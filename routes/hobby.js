@@ -1,11 +1,10 @@
-var   _  	= require('underscore')
-	, Items = require('../models/Item.js')
+var Items = require('../models/Item.js')
 	, Hobbies = require('../models/Hobby.js')
 	, Account = require('../models/Account.js');
 
 exports.index = function(req, res) {
 	var hobbyQuery = req.params.hobby;
-	var hobbyResult, itemsResult;
+	var hobbyResult, itemsResult, marketItems;
 	
 	Hobbies.findOne({ name: hobbyQuery }).exec().addBack(function(err, result) {
 		if(err) console.log(err);
@@ -18,6 +17,8 @@ exports.index = function(req, res) {
 	.then(function(hobbyItems) {
 		itemsResult = hobbyItems;
 		
+		marketItems = itemsResult.filter(function(item) { return item.isForSale || item.isForRent; });
+		
 		if(! (hobbyResult && itemsResult)) return [];
 		
 		var activity = hobbyResult.activity.map(function(el){el.type='general'; return el}).concat(itemsResult.map(function(el){ el.type='newItem'; return el}));
@@ -29,6 +30,6 @@ exports.index = function(req, res) {
 		return activity;
 	})
 	.then( function(activity) {
-		activity && hobbyResult ? res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult }) : res.status('404').send('That hobby doesn\'t exist!');
+		activity && hobbyResult ? res.render('hobby', { user: req.user, recentActivity: activity, hobby: hobbyResult, marketplace: marketItems }) : res.status('404').send('That hobby doesn\'t exist!');
 	});
 }

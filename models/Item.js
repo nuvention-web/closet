@@ -13,8 +13,8 @@ var item = new Schema({
 
 	rating: { type: Number, min: 0.0, max: 10.0 },
 	description: { type: String, required: true },
-	owner: Schema.Types.Mixed,
-	condition: {type: String, enum: ['New', 'Like new', 'Lightly used', 'Used', 'Poor'] },
+	owner: Schema.Types.ObjectId,
+	condition: {type: String, enum: ['New', 'Like New', 'Lightly Used', 'Used', 'Poor'] },
 	conditionDetails: String,
 	photos: [String],
 	
@@ -23,9 +23,7 @@ var item = new Schema({
 	isForRent: Boolean,
 	rentalPrice: Number,
 
-	reviews: [{	username: String,
-				realName: {firstName: String, lastName: String},
-				profilePhoto: String,
+	reviews: [{	user: Schema.Types.ObjectId,
 				rating: { type: Number, min: 0.0, max: 10.0 },
 				content: String
 			}],

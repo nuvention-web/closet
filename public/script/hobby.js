@@ -23,7 +23,7 @@ $(document).ready(function(){
 		else {
 			$.each($('#items>*'), function(idx, el) {
 				console.log($(el).attr('tags'));
-				if ($(el).attr('tags') && $(el).attr('tags').split(',').some(function(el) { return el.indexOf(val) != -1 })) {
+				if ($(el).attr('tags') && $(el).attr('tags').split(',').some(function(el) { return el.indexOf(val.toLowerCase()) != -1 })) {
 					$(el).fadeIn();
 				}
 				else {

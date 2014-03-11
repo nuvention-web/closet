@@ -17,6 +17,7 @@ block content
 			#whatsNew
 				#posts
 					each activity in recentActivity
+						=console.log(activity)
 						div(class=activity.type+'Post')
 							a(href='/users/'+activity.owner)
 								img(data-prof='/users/'+activity.owner).feed-profile-picture
@@ -27,7 +28,7 @@ block content
 							div(class=activity.type)
 								if(activity.type==='general')
 									p=activity.description
-								if(activity._id)
+								if(activity.type==='newItem' && activity._id)
 									a(href='/items/'+activity._id)
 										img(src='/images/'+activity.tilePhoto)
 								else
@@ -42,86 +43,41 @@ block content
 										h4.rent
 											a(href='/items/'+activity._id) Rent for $#{activity.rentalPrice}/day
 				#hobbyists
-					h4= 'Hobbyists ('+hobby.members.length+')'
+					h4= 'Hobbyists ('+(hobby.members.length+(hobby.name==='outdoor' ? 40 : 0)) +')'
+					p See all
 					each member in hobby.members
 						.member
 							a(href='/users/'+member)
 								img(data-prof='/users/'+member)
 			#marketplace
-				#category
-					h3 category
-					input(type='search', placeholder='Search items by category tags', name='searchField' id='searchTags')
-				#type
-					h3 type
-					button.typeButton.buy buy
-					button.typeButton.rent rent
+				#categoryType
+					h3 Category
+					input(type='search', placeholder='Search by category', name='searchField' id='searchTags')
+					h3 Type
+					button.typeButton.buy Buy
+					button.typeButton.rent Rent
+					if(user)
+							h3 Showing items near #{user.location}
+					p change
 				#items
-					.forSale(tags='tent,yellow tent,northface,north face')
-						img(src='/images/yellowtent.png').productImage
-						img(src='/images/ChrisGriffin.png').feed-profile-picture
-						.info
-							h4 
-								a(href='/demoSale') Northface Backcountry Tent
-							p Like New
-						.buy
-							a(href='/demoSale')
-								h4 $240
-								p buy
-					.forRent(tags='tent,sleeping bag,bag')
-						img(src='../../images/sleepingbag.png').productImage
-						img(src='../../images/hobbyist02.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Columbia Sleeping Bag
-							p Mint Condition
-						.rent
-							h4 $35/day
-							p 
-								a(href='#') rent
-					.forSale
-						img(src='../../images/harness.png').productImage
-						img(src='../../images/hobbyist03.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Misty Rock Climbing Set
-							p Almost New
-						.buy
-							h4 $35
-							p
-								a(href='#') buy
-					.forRent
-						img(src='../../images/snowboard.png').productImage
-						img(src='../../images/hobbyist04.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Burton Parkstar Snowboard
-							p Used
-						.rent
-							h4 $15/day
-							p
-								a(href='#') rent
-					.forSale
-						img(src='../../images/camera.png').productImage
-						img(src='../../images/hobbyist05.png').feed-profile-picture
-						.info
-							h4
-								a(href='#') Waterproof Camera Case
-							p Like New
-						.buy 
-							h4 $100
-							p
-								a(href='#') buy
-					.forSale
-						img(src='../../images/surfboard.png').productImage
-						img(src='../../images/hobbyist06.png').feed-profile-picture
-						.info
-							h4 
-								a(href='#') Infinity Surfboard
-							p Lightly Used
-						.buy
-							h4 $150
-							p
-								a(href='#') buy
+					each item in marketplace
+						div(class= item.isForSale ? 'forSale' : 'forRent')(tags=item.tags)
+							img(src='/images/'+item.tilePhoto).productImage
+							img(data-prof='/users/'+item.owner).feed-profile-picture
+							.info
+								h4 
+									a(href='/items/'+item._id) #{item.name}
+								p #{item.condition}
+							if(item.isForSale)
+								.buy
+									a(href='/items/'+item._id)
+										h4 $#{item.salePrice}
+										p buy
+							else
+								.rent
+									a(href='/items/'+item._id)
+										h4 $#{item.rentalPrice}/day
+										p rent
 
 		//- //this loads all the items related to the hobbie, which are passed to the template as "items"
 		//- mixin dashItems(items)
