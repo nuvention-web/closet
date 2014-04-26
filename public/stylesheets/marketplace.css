@@ -1,0 +1,78 @@
+/* line 1, ../../sass/marketplace.scss */
+label.search, label.type, label.loc {
+  text-transform: uppercase;
+  color: #8CCF4B;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* line 8, ../../sass/marketplace.scss */
+input.search {
+  margin-left: 28px;
+}
+
+/* line 12, ../../sass/marketplace.scss */
+button.type {
+  margin: 0 0 0 28px;
+  display: inline-block;
+  font-size: 90%;
+  text-transform: uppercase;
+  background: #FFF;
+  border: 2px solid #8CCF4B;
+  text-shadow: none;
+  color: #000;
+}
+
+/* line 23, ../../sass/marketplace.scss */
+p.loc {
+  display: inline-block;
+  margin-left: 28px;
+}
+
+/* line 28, ../../sass/marketplace.scss */
+a.loc {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* line 35, ../../sass/marketplace.scss */
+a.location:hover {
+  color: #339933;
+  cursor: pointer;
+}
+
+/* line 40, ../../sass/marketplace.scss */
+.marketplace-item {
+  background: #FFF;
+  border: 1px outset #888;
+  padding: 0;
+}
+/* line 46, ../../sass/marketplace.scss */
+.marketplace-item img.img-rounded, .marketplace-item .bottom,
+.marketplace-item .description, .marketplace-item .cost, .marketplace-item .rent {
+  padding: 0;
+}
+/* line 50, ../../sass/marketplace.scss */
+.marketplace-item img.img-rounded {
+  margin-top: 3%;
+}
+/* line 54, ../../sass/marketplace.scss */
+.marketplace-item .description {
+  margin: 2% 0 0 3%;
+}
+/* line 58, ../../sass/marketplace.scss */
+.marketplace-item img.profile {
+  margin: 3% 1%;
+  width: 20%;
+}
+/* line 63, ../../sass/marketplace.scss */
+.marketplace-item .rent {
+  font-size: 140%;
+  margin-top: 2%;
+}
+/* line 67, ../../sass/marketplace.scss */
+.marketplace-item .rent .buy {
+  padding: 0 10%;
+}

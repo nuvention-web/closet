@@ -11,15 +11,6 @@ block content
         .group(ng-show='loggedIn')
           img.profile(ng-src='{{profilePicture}}')
           h4.col-xs-6.profile {{displayName}}
-      
-  nav.col-md-2.col-sm-2.col-xs-12.nav
-    ul.pages
-      li#here
-        a(href='#/') What's New
-      li 
-        a(href='#/marketplace') Marketplace
-      li 
-        a(href='#/mygear') My Gear
 
   ng-view
 

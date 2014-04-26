@@ -1,45 +1,61 @@
+nav.col-md-2.col-sm-2.col-xs-12.nav
+    ul.pages
+      li
+        a(href='#/activityfeed') What's New
+      li 
+        a(href='#/marketplace') Marketplace
+      li#here
+        a My Gear
+
 .col-md-10.col-sm-11(ng-show='loggedIn')
-  form(ng-submit='addGear()')
+  form.col-xs-6.uploadform.col-xs-offset-1(ng-submit='addGear()')
     .form-group.col-xs-12
-      label.col-xs-2 Item Name
-      input.col-xs-10(type='text', placeholder='eg Camelbak Eddy Water Bottle', ng-model='addGearForm.name', required)
+      label.col-xs-4 Item Name
+      input.col-xs-7(type='text', placeholder='eg Camelbak Eddy Water Bottle', ng-model='addGearForm.name', required)
     .form-group.col-xs-12
-      label.col-xs-2 Item Condition
-      select.col-xs-10(ng-model='addGearForm.condition', required)
+      label.col-xs-4 Condition
+      select.col-xs-3(ng-model='addGearForm.condition', required)
         option Okay
         option(selected='selected') Good
         option Very Good
         option Like New
         option New
     .form-group.col-xs-12
-      label.col-xs-3 Sale Price or Rental Price (/ Day)
-      input.col-xs-9(type='number', step='0.01', ng-model='addGearForm.price', required)
-    .form-group.col-xs-12
-      select.col-xs-12(ng-model='addGearForm.rentalOrSale', required)
-        option(selected='selected') Sell
+      label.col-xs-4 Item For:
+      select.col-xs-3(ng-model='addGearForm.rentalOrSale', required)
+        option(selected='selected') Sale
         option Rent
+    .form-group.col-xs-12.price
+      label.col-xs-4 Price
+      span $
+      input.col-xs-3(type='text', ng-model='addGearForm.price',required)
+      span
+        p.rent per day
     .form-group.col-xs-12
-      label.col-xs-12 Description
-      textarea.col-xs-10.col-xs-offset-1(ng-model='addGearForm.description')
+      label.col-xs-4 Description
+      textarea.col-xs-7(ng-model='addGearForm.description')
     .form-group.col-xs-12
-      label.col-xs-3 Picture
-      input.col-xs-9(type="file", name="file", onchange="angular.element(this).scope().uploadFile(this.files)", required)
+      label.col-xs-4 Picture
+      .fileinput.col-xs-3
+        input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this.files)", required)
+        .fakeinput.col-xs-12
+          input.custom-button.col-xs-12(type='button', value='Choose File')
+    br
     .form-group.col-xs-12
-      input.col-xs-12.custom-button(type='submit', value='Post Item')
-  
-  h3 My Gear:
-  
-  hr
-  .col-xs-12.my-gear
-    .col-lg-3.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
-      .item-image.col-xs-12.img-rounded(style='background-image: url("{{item.image || "images/default.png"}}")')
-      .col-xs-12
-        img.profile.img-responsive(ng-src='{{profilePicture}}')
-        .description.col-xs-6
-          span.name {{item.name}}
-          br
-          span.quality {{item.quality}}
-        .col-xs-4
-          span.cost.text-center {{item.price | currency}}
-          br
-          button.buy {{item.rentOrBuy}}
+      input.col-xs-4.col-xs-offset-4.post(type='submit', value='Post Item')
+  .mygear.col-xs-12
+    h3.col-xs-2 My Gear:
+    //- button.col-xs-2.uploadnew.custom-button Add Item
+    
+    .col-xs-12.my-gear
+      .col-lg-4.col-md-4.col-xs-6.gear(ng-repeat='item in myGear')
+        .item-image.col-xs-12.img-rounded(style='background-image: url("{{item.image || "images/default.png"}}")')
+        .col-xs-12
+          img.profile.img-responsive(ng-src='{{profilePicture}}')
+          .description.col-xs-6
+            span.name {{item.name}}
+            br
+            span.quality {{item.quality}}
+          .rent.pull-right.col-xs-3
+            span.cost.text-center.pull-right {{item.price | currency}}
+

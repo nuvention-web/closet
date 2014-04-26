@@ -1,0 +1,134 @@
+.uploadform {
+	background: #FFF;
+	padding-top: 2%;
+	border-radius: 15px;
+	// display: none;	
+
+	label {
+	text-transform: uppercase;
+	color: #8CCF4B;
+	display: inline-block;
+	vertical-align: bottom;
+	}
+
+	p {
+		display: inline-block;
+	}
+
+	input:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
+	}
+
+	.price {
+		position: relative;
+
+		span {
+			position: absolute;
+			padding: 1%;
+			pointer-events: none;
+			z-index: 1;
+		}
+	}
+
+	select {
+		background: #FFF;
+		border: 1px solid #8CCF4B;
+	}
+
+	textarea {
+		box-shadow: 0 1px 1px #DDD inset
+	}
+
+	textarea:focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: #8CCF4B;
+	}
+
+	.fileinput {
+		position: relative;
+		padding: 0;
+
+		input.file {
+			padding: 0;
+			position: relative;
+			text-align: right;
+			-moz-opacity:0 ;
+			opacity: 0;
+			opacity: 0;
+			z-index: 2;
+	    cursor: pointer;
+	  }
+	}
+
+	.fakeinput {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 1;
+		padding: 0;
+
+		input {
+			text-transform: uppercase;
+			background: #FFF;
+			border: 2px solid #8CCF4B;
+			color: #000;
+			margin: auto;
+			padding: 2px 2%;
+			height: 100%;
+			position: relative;
+			top: 0;
+			cursor: pointer !important;
+		}	
+	}
+
+	input.post {
+		font-size: 140%;
+		color: white;
+		background: #8CCF4B;
+		border: none;
+	}
+
+	button.cancel {
+		padding: 0 5%;
+	}
+}
+
+.mygear {
+
+	h3 {
+		margin: 1.2% 0% 5% 0;
+	}
+
+	button.uploadnew {
+		font-size: 150%;
+	}
+
+	.gear {
+		background: #FFF;	
+		border: 10px solid #EEE;
+		padding: 0 !important;
+
+		img.img-rounded, .description, .cost, .rent {
+			padding: 0;
+		}
+
+		.description {
+			margin: 2% 0 0 3%;
+			font-size: 80%;
+		}
+
+		img.profile {
+			margin: 3% 1%;
+			width: 40px;
+			height: 40px;
+		}
+
+		.rent {
+			font-size: 140%;
+			margin-top: 2%;
+		}
+	}
+}
