@@ -1,32 +1,54 @@
-.col-md-10.col-sm-11
+nav.col-md-2.col-sm-2.col-xs-2.nav.navigation
+  ul.pages
+    li
+      a(href='#/') What's New
+    li#here
+      a Marketplace
+    li 
+      a(href='#/mygear') My Gear
+
+
+.col-lg-8.col-md-10.col-sm-10.col-xs-offset-2(style='padding-bottom: 200px;')
   form
-    .form-group.col-xs-12
+    .form-group.col-xs-12.search
       label.col-xs-1 Search
-      input.col-xs-10.col-lg-6(type='text', ng-model='search', placeholder='backpacks, boots, sleeping bags...')
-    .form-group.col-lg-4.col-xs-12(ng-init='showBuy = true; showRent = true')
-      label.col-xs-3 Type
-      br
-      button.custom-button.col-xs-4(ng-click='showBuy = !showBuy', ng-class='{"inactive": !showBuy}') Buy
-      button.custom-button.col-xs-4(ng-click='showRent = !showRent', ng-class='{"inactive": !showRent}') Rent
-    .form-group.col-lg-4.col-xs-12
-      label Location
-      p San Francisco and the Bay Area
-      p.text-warning change location
+      input.col-xs-10.col-lg-6(type='text', ng-model='search.item.name', placeholder='backpacks, boots, sleeping bags...')
+    .form-group.col-xs-12.type(ng-init='showBuy = true; showRent = true')
+      label.col-xs-1 Type
+      button.custom-button.col-xs-2(ng-click='toggleBtns("showBuy")', ng-class='{"inactive": !showBuy}') Buy
+      button.custom-button.col-xs-2(ng-click='toggleBtns("showRent")', ng-class='{"inactive": !showRent}') Rent
+    .form-group.col-xs-12.location
+      label.col-xs-1 Location
+      p {{location || hometown}}
+      a change location
       
   //bootstrap modal for add item
   // OR just redirect to /mygear
   
   .col-xs-12.marketplace-content
-    .col-lg-3.col-md-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search:strict', ng-show='showHide(result.item.rentOrBuy)')
-      .item-image.col-xs-12.img-rounded(style='background-image: url("{{result.item.image || "images/default.png"}}")')
+    .col-lg-5.col-sm-4.col-xs-6.marketplace-item(ng-repeat='result in marketplace | filter:search', ng-show='showHide(result.item.rentOrBuy)')
+      .photo.col-xs-12.img-rounded(style="background-image: url(&quot;https://outrovert-uploads.s3.amazonaws.com/facebook:100004564260040_2014-04-29 09.42.25.jpg&quot;)")
       .star
-      .col-xs-12
-        img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
+      .bottom.col-xs-12
+        .col-xs-3
+          img.profile.img-responsive(ng-src='{{result.poster.profilePicture}}')
         .description.col-xs-6
-          span.name {{result.item.name}}
+          span.name(popover-placement='bottom', popover-title='Description', popover-trigger='mouseenter', popover='{{result.item.description}}') {{result.item.name}}
           br
-          span.quality {{result.item.quality}}
-        .col-xs-4
-          span.cost.text-center {{result.item.price | currency}}
+          span.quality {{result.item.condition}}
+        .col-xs-3.pull-right.transact
+          span.cost.text-center.pull-right {{result.item.price | currency}}
           br
-          button.buy {{result.item.rentOrBuy}}
+          button.buy.custom-button.pull-right(ng-click='openTransaction(result)') {{result.item.rentOrBuy}}
+          
+script(type="text/ng-template", id="modal.html").
+  <div class="modal-header">
+    <h3>Are you sure?</h3>
+  </div>
+  <div class="modal-body">
+    By clicking OK below, you will be opening a transaction process over the item you just clicked. If you don't want to start a transaction process, click cancel.
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>

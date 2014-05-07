@@ -22,6 +22,8 @@
     "passport-local-mongoose": "~0.2.5",
     "underscore": "~1.5.2",
     "mailchimp": "~1.1.0",
-    "gm": "~1.14.2"
+    "gm": "~1.14.2",
+    "crypto": "0.0.3",
+    "nodemailer": "~0.6.3"
   }
 }

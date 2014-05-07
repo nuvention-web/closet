@@ -1,37 +1,49 @@
+nav.col-md-2.col-sm-2.col-xs-2.nav.navigation(ng-show='loggedIn')
+    ul.pages
+      li#here
+        a(href='#/') What's New
+      li 
+        a(href='#/marketplace') Marketplace
+      li
+        a(href='#/mygear') My Gear
+
 .col-md-7.col-sm-8.mainfeed
-  tabset
+  tabset(ng-show='loggedIn')
     tab
       tab-heading
-        i.fa.fa-edit | Share a story
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
-        input.custom-button.col-xs-12(type='submit', value='Post')
+        i.fa.fa-edit Share a story
+      .col-xs-12.tabcontent
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
+          textarea.col-xs-12(ng-model='activityForm.message', placeholder="What's your new adventure?")
+          input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
     tab
       tab-heading
-        i.fa.fa-camera | Upload photo/video
-      form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
-        textarea.col-xs-12(ng-model='activityForm.message', placeholder="Choose photo/video")
-        input.custom-button.col-xs-12(type='submit', value='Post')
+        i.fa.fa-camera Upload photo
+      .col-xs-12.tabcontent
+        form.col-md-10.col-sm-12.col-xs-12(ng-submit='publishActivity()')
+          .fileinput.col-xs-3
+            input.col-xs-12(type="file", name="file", class='file', onchange="angular.element(this).scope().uploadFile(this)", required)
+            .fakeinput.col-xs-12
+              input.custom-button.photoupload.col-xs-12(type='button', value='Choose Photo')
+          textarea.col-xs-9(ng-model='activityForm.message', placeholder="What's your new adventure?")  
+          input.custom-button.col-xs-2.pull-right.post(type='submit', value='Post')
         
   //- form.col-md-8.col-sm-10.col-xs-12(ng-submit='publishActivity()', ng-show='loggedIn')
   //-   label Post your most recent excursion!
   //-   textarea.col-xs-12(ng-model='activityForm.message')
   //-   input.button--3d.col-xs-12(type='submit', value='Post')
-
-  .message-preview.col-md-10.col-sm-12(ng-show='!!activityForm.message')
-    img.profilefeed.col-xs-2(ng-src='{{profilePictureM}}', style='max-width: 80px')
-    .col-xs-10 {{displayName}}
-      small &nbsp;&nbsp;says
-      p.col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{activityForm.message}}
-
   //- hr.col-xs-6.col-xs-offset-1(style='margin-top: 20px;')
 
   p.col-xs-12.text-center.text-warning {{flashMessage}}
 
-  .activityFeed.col-md-10.col-sm-12.col-xs-12(ng-repeat='post in feed | orderBy:timestamp', ng-show='{{!!feed.length}}')
+  .activityFeed.col-md-10.col-sm-12.col-xs-12(ng-repeat='post in feed', ng-show='{{!!feed.length}}')
     .message.col-xs-12
-      img.profilefeed.col-xs-2(ng-src='{{post.profilePictureM}}', style='max-width: 80px')
-      .col-xs-10 {{post.displayName}}
-        small &nbsp;&nbsp; says
-        p.pull-right {{Date(post.timestamp).toLocaleDateString()}}
-        .col-xs-12(style='margin-top: 5px; border: 1px solid rgba(0,0,0,0.2); padding: 5px; border-radius: 2px;') {{post.textContent}}
+      a.delete.pull-right(href='javascript:void(0)', ng-show='post[1].displayName === displayName', ng-click='deletePost(post[0])') x (delete)
+      img.profilefeed.col-xs-2(ng-src='{{post[1].profilePictureM}}', style='max-width: 80px')
+      .col-xs-10 {{post[1].displayName}}
+        small &nbsp;&nbsp; {{!!post[1].photo ? 'posted a photo' : 'says'}}
+        .col-xs-12.message-picture(ng-show='!!post[1].photo')
+          hr.col-lg-8.col-xs-10
+          img.photo(src="{{post[1].photo}}").img-rounded.col-lg-8.col-lg-offset-0.col-xs-10.col-xs-offset-1
+          hr.col-lg-8.col-xs-10
+        .col-xs-12.message-content {{post[1].textContent}}

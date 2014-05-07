@@ -1,56 +1,18 @@
 .custom-button {
 	display: block;
-	margin: 1% auto;
-	padding: 2px 2%;
+	// margin: 1% auto;
+	// padding: 2px 2%;
 	height: 100%;
-	position: relative;
-	top: 0;
+	text-align: center;
+	// position: relative;
+	// top: 0;
 	color: white;
 	background: #8CCF4B;
+	font-size: 1.5em;
 	border: none;
 	
 	&.inactive {
 		background: darken(#8CCF4b, 15%);
 	}
-}
-
-.button--3d {
-	@extend .custom-button;
-
-	@include box-shadow( 
-		inset 1px 1px rgba(20,20,100,0.55), 
-		inset -1px -1px rgba(20,20,100,0.55), 
-		0px 5px #1374a8, 
-		0px 7px 7px -3px black);
-
-	@include border-radius(3px);
-
-	@include single-transition(all, 0.15s, ease);
-
-	&:hover {
-		@include box-shadow(
-			inset 1px 1px rgba(20,20,100,0.55), 
-			inset -1px -1px rgba(20,20,100,0.55), 
-			0px 8px #0e6491,	
-			0px 10px 7px -3px black);
-		top: -5px;
-	}
-
-	&:active { 
-		@include box-shadow(
-			inset 1px 1px rgba(20,20,100,0.55),	
-			inset -1px -1px rgba(20,20,100,0.55),	
-			0px 0px #10618d);
-
-		top: 10px;
-	}
-}
-
-textarea {
-	resize: none;
-	border-color: rgba(0,0,0,0.2);
-	&:focus {
-		outline: none;
-		@include box-shadow(rgba(50,200,50,0.5));
-	}
+	
 }

@@ -1,0 +1,85 @@
+.search label, .type label, .location label {
+	text-transform: uppercase;
+	color: #8CCF4B;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.search input {
+	margin-left: 28px;
+}
+
+.search input:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
+}
+
+.type button {
+	margin: 0 0 0 28px;
+	display: inline-block;
+	font-size: 90%;
+	text-transform: uppercase;
+	background: #FFF;
+	border: 2px solid #8CCF4B;
+	text-shadow: none;
+	color: #000;
+}
+
+.location p {
+	display: inline-block;
+	margin-left: 28px;
+}
+
+.location a {
+	display: inline-block;
+	color: #888;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+.location a:hover {
+	color: #339933;
+	cursor: pointer;
+}
+
+.marketplace-item {
+	background: #FFF;
+	border: 10px solid #EEE;
+	padding: 0 !important;
+
+	.bottom {
+		padding: 0 !important;
+	}
+
+	img.photo, .description, .cost, .rent {
+		padding: 0;
+	}
+
+	img.photo {
+		height: 15em !important;
+	}
+
+	.description {
+		margin-top: 1%;
+	}
+
+	img.profile {
+		margin: 15% 0;
+		width: 2.5em !important;
+		height: 2.5em !important;
+	}
+
+	.transact {
+		margin-bottom: 5%;
+	}
+
+	.buy {
+		padding: 3px 15px;
+		font-size: 1.2em !important;
+	}
+
+	.buy:hover {
+    background-color: #BAE293;
+	}
+}

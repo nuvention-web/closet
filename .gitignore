@@ -40,9 +40,8 @@ mapreduce/results
 /documents/*
 /testing-heroku/
 /testing-heroku/*
-<<<<<<< HEAD
-/.sass-cache/*
-=======
 
 /.sass-cache/*
->>>>>>> 0a196333957ba04d39c38ecd418d95e34b2045ed
+
+/node-modules/
+/node-modules/*

@@ -1,25 +1,38 @@
-extends layout
-block content
-  header.col-xs-12.head(ng-controller='base')
-    span.logo.col-xs-2
-      img(src='images/logoAssets/cornerlogo.png')
-    span.col-xs-4.pull-right
-      #loginButtons.col-xs-6.pull-right
-        button#fbLogin.custom-button.pull-right(ng-click='fbLogin()', ng-hide='loggedIn') Login to Facebook
-        button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
-      #loggedInData.col-xs-6.pull-right
-        .group(ng-show='loggedIn')
-          img.profile(ng-src='{{profilePicture}}')
-          h4.col-xs-6.profile {{displayName}}
-      
-  nav.col-md-2.col-sm-2.col-xs-12.nav
-    ul.pages
-      li#here
-        a(href='#/') What's New
-      li 
-        a(href='#/marketplace') Marketplace
-      li 
-        a(href='#/mygear') My Gear
+doctype html
+html(ng-app='outrovert')
+  head
+    include top
+  body(ng-controller='base')
+    header.col-xs-12.head(ng-show="loggedIn")
+      span.logo.col-xs-2
+        img(src='images/logoAssets/cornerlogo.png')
+      span.col-xs-4.col-md-3.pull-right
+        #loginButtons.col-xs-6.col-md-5.pull-right
+          button#logout.custom-button.pull-right(ng-click='logout()', ng-show='loggedIn') Log out
+        #loggedInData.col-xs-6.pull-right
+          .group(ng-show='loggedIn')
+            img.profile(ng-src='{{profilePicture}}')
+            //- .col-xs-12
+            h4.profile.pull-right {{displayName}}
 
-  ng-view
+    .login.col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
+      img.img-responsive.col-xs-12(src='/landing-assets/img/new_logo.png', style='margin: 50px 0')
+      button#fbLogin.custom-button.col-xs-6.col-xs-offset-3(ng-click='fbLogin()', ng-hide='loggedIn') Login with Facebook
+
+    .col-xs-6.col-xs-offset-3(ng-hide='loggedIn')
+      img.col-xs-6.col-xs-offset-3(src='/images/icons.png')
+
+    //nav.col-md-2.col-sm-2.col-xs-12.nav(ng-show='loggedIn')
+      ul.pages
+        li#here
+          a(href='#/') What's New
+        li 
+          a(href='#/marketplace') Marketplace
+        li
+          a(href='#/mygear') My Gear
+
+
+    ng-view(ng-show='loggedIn')
+    
+    include lazy-scripts
 

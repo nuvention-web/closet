@@ -1,154 +1,45 @@
-/* line 1, ../../SASS/formElements.scss */
-.custom-button, .button--3d {
-  display: block;
-  margin: 1% auto;
-  padding: 2px 2%;
-  height: 100%;
-  position: relative;
-  top: 0;
-  color: white;
-  background: #8CCF4B;
-  border: none;
-}
-/* line 12, ../../SASS/formElements.scss */
-.custom-button.inactive, .inactive.button--3d {
-  background: #66a22b;
-}
-
-/* line 17, ../../SASS/formElements.scss */
-.button--3d {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 5px #1374a8, 0px 7px 7px -3px black;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
-/* line 30, ../../SASS/formElements.scss */
-.button--3d:hover {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 8px #0e6491, 0px 10px 7px -3px black;
-  top: -5px;
-}
-/* line 39, ../../SASS/formElements.scss */
-.button--3d:active {
-  -webkit-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  -moz-box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  box-shadow: inset 1px 1px rgba(20, 20, 100, 0.55), inset -1px -1px rgba(20, 20, 100, 0.55), 0px 0px #10618d;
-  top: 10px;
-}
-
-/* line 49, ../../SASS/formElements.scss */
-textarea {
-  resize: none;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-/* line 52, ../../SASS/formElements.scss */
-textarea:focus {
-  outline: none;
-  -webkit-box-shadow: rgba(50, 200, 50, 0.5);
-  -moz-box-shadow: rgba(50, 200, 50, 0.5);
-  box-shadow: rgba(50, 200, 50, 0.5);
-}
-
-/* line 4, ../../SASS/base.scss */
+/* line 3, ../../sass/base.scss */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* line 9, ../../SASS/base.scss */
-h1, h2 {
-  font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg);
-  color: #5cafff;
-  text-shadow: -6px 4px white, 2px 1px 7px black;
+/* line 8, ../../sass/base.scss */
+input:focus {
+  outline-style: auto;
+  outline-width: 3px;
+  outline-color: #8CCF4B;
 }
 
-/* line 16, ../../SASS/base.scss */
-h1 {
-  font-size: 4em;
+/* line 15, ../../sass/base.scss */
+body .custom-button {
+  display: block;
+  color: white;
+  text-align: center;
+  background: #8CCF4B;
+  font-size: 1.8em;
+  padding: 3px 0;
+  border: none;
+  border-radius: 3px;
 }
-
-/* line 20, ../../SASS/base.scss */
-h2 {
-  font-size: 3.5em;
-  margin: 1% 0;
+/* line 26, ../../sass/base.scss */
+body .custom-button:hover {
+  background-color: #BAE293;
+  cursor: pointer;
 }
-
-/* line 25, ../../SASS/base.scss */
-p {
-  margin: 0.7em auto;
-  width: auto;
+/* line 31, ../../sass/base.scss */
+body .custom-button.inactive {
+  background: #66a22b;
 }
-/* line 28, ../../SASS/base.scss */
-p.heavyShadow {
-  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-/* line 33, ../../SASS/base.scss */
-a {
-  color: #00B7FF;
-}
-
-/* line 37, ../../SASS/base.scss */
-body {
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  background: #fafafa;
-}
-/* line 44, ../../SASS/base.scss */
-body hr {
-  border-color: #ddd;
-}
-/* line 48, ../../SASS/base.scss */
+/* line 35, ../../sass/base.scss */
 body header {
   height: 60px;
   padding: 15px 0;
   margin-bottom: 20px;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
-/* line 55, ../../SASS/base.scss */
-body header span.centeredLogo {
-  font-family: pacifico, 'Lucida Grande', 'Lucida Sans', 'helvetica neue', helvetica, sans-serif;
-  color: #5cafff;
-  text-shadow: -3px 2px white;
-  font-size: 1.9em;
-  display: inline-block;
-}
-/* line 64, ../../SASS/base.scss */
-body .message-preview, body .message {
-  margin-top: 15px;
-}
-/* line 68, ../../SASS/base.scss */
-body .gear, body .marketplace-item {
-  float: left;
-}
-/* line 70, ../../SASS/base.scss */
-body .gear .profile, body .marketplace-item .profile {
-  display: inline-block;
-  max-width: 30px;
-  float: left;
-}
-/* line 75, ../../SASS/base.scss */
-body .gear .item-image, body .marketplace-item .item-image {
-  height: 200px;
-  background-color: gainsboro;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+/* line 43, ../../sass/base.scss */
+body form label {
+  text-transform: uppercase;
+  color: #8CCF4B;
 }

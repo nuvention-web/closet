@@ -1,9 +1,4 @@
-
 title OUTROVERT
-
-//
-    local styles
-link(rel='stylesheet', href='/stylesheets/base.css')
 
 //
    Bootstrap core CSS 
@@ -11,14 +6,9 @@ link(href='landing-assets/css/bootstrap.min.css', rel='stylesheet')
 link(href='landing-assets/css/font-awesome.min.css', rel='stylesheet')
 
 //
-    jQuery
-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-
-script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
-
-//
-    edgefonts
-script(src='//use.edgefonts.net/pacifico.js')
+    local styles
+//- link(rel='stylesheet', href='/stylesheets/base.css')
+//- link(rel='stylesheet', href='/stylesheets/whatsnew.css')
 
 //
     firebase core
@@ -30,14 +20,18 @@ script(type='text/javascript', src='https://cdn.firebase.com/js/simple-login/1.3
 script(src='components/angular/angular.min.js')
 script(src='//cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js')
 script(src='components/angular-route/angular-route.min.js')
+script(src='/script/angular/ui-bootstrap-tpls-0.10.0.min.js')
 
 //
     outrovert angular app
-script(src='/script/angular/ui-bootstrap-tpls-0.10.0.min.js')
 script(src='/script/angular/outrovert.js')
 
+link(rel='stylesheet', href='/stylesheets/base.css')
+link(rel='stylesheet', href='/stylesheets/marketplace.css')
 link(rel='stylesheet', href='/stylesheets/whatsnew.css')
-script(src='/script/test.js')
+link(rel='stylesheet', href='/stylesheets/mygear.css')
+
+
 //
     google analytics tracking code
 script.
@@ -48,3 +42,17 @@ script.
 
     ga('create', 'UA-49584452-1', 'closet-landing-page.herokuapp.com');
     ga('send', 'pageview');
+    
+//
+    inspectlet tracking code
+script#inspectletjs.
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 642490066]);
+    (function() {
+        function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+        if (window.attachEvent){
+            window.attachEvent('onload', __ldinsp);
+        }else{
+            window.addEventListener('load', __ldinsp, false);
+        }
+    })();

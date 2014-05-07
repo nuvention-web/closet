@@ -1,9 +1,9 @@
 body {
-  background-color: #f2f2f2;
-    font-family: 'EB Garamond', serif;
+    background-color: #f2f2f2;
+    font-family: 'Tahoma', sans-serif;
     font-weight: 300;
     font-size: 100%;
-    color: #555;
+    color: #333;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -15,11 +15,16 @@ body {
     width: 75%;
 }
 
+.container.scroll-down {
+    background: rgba(0,0,0,0);
+    margin-top: 0;
+}
+
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Tahoma', sans-serif;
     font-weight: 300;
-    color: #333;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 
@@ -28,7 +33,9 @@ p.quote {
     text-align: center;
     line-height: 130%;
     padding: 0 2%;
-    font-size: 200%;
+    font-size: 170%;
+    font-weight: 300;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 p.cite {
@@ -36,7 +43,10 @@ p.cite {
     margin-bottom: 7%;
     line-height: 120%;
     padding: 0 1.5%;
-    font-size: 200%;
+    font-size: 170%;
+    font-weight: 300;
+    color: #333;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 .centered {
@@ -52,6 +62,16 @@ a {
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a.login {
+    position: fixed;
+    right: 50px;
+}
+
+a.login button {
+    padding: 5px 15px;
+    font-size: 1.6em;
 }
 
 a:hover,
@@ -79,28 +99,52 @@ a:after {
 }
 
 .logo {
+    display: relative;
 	text-align: center;
 	margin-top: 6%;
+    padding: 0;
 }
 
 .logo img {
-    width: 50%;
+    width: 80%;
+}
+
+.def {
+    padding: 2%;
+    padding-left: 2.5%;
+    margin-top: 4%;
+}
+
+.def p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 170%;
+    /*text-shadow: 1px 1px #777;*/
+}
+
+.logo p {
+    text-align: left;
+    font-size: 200%;
+    margin: 0;
+    line-height: 100%;
+    vertical-align: top;
 }
 
 .email, .clear {
-    font-size: 200%;
+    font-size: 1.8em;
     display: inline-block;
 }
 
-#mc-embedded-subscribe {
-    font-size: 100%;
-    vertical-align: baseline;
+.email {
+    position: relative;
+    left: 20px;
+    width: 75%;
 }
 
-#mc-embedded-subscribe {
-    border: 1px solid transparent;
-    margin-top: 10px;
-    background-color: #8CCF4B;
+.email:focus {
+    outline-style: auto;
+    outline-width: 5px;
+    outline-color: #8CCF4B;
 }
 
 h1 {
@@ -132,3 +176,29 @@ i.fa-facebook:focus,
 i.fa-twitter:hover,
 i.fa-twitter:focus {
     color: #7b7b7b;
+}
+
+.scroll-down {
+    padding: 0 19%;
+}
+
+.fa-arrow-down {
+    color: #8CCF4B;
+    display: inline-block;
+    margin: 11% 2%;
+}
+
+.scroll-down h2 {
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+}
+
+.about .img, .about .desc {
+    margin: 30px 0;
+}
+
+.about img {
+    width: 100%;
+}
